@@ -51,3 +51,17 @@ class Portfolio(models.Model):
 
     def __str__(self):
         return self.name
+
+class Funds(models.Model):
+    """Funds object"""
+    owner = models.ForeignKey(
+        settings.AUTH_USER_MODEL,
+        on_delete=models.CASCADE,
+    )
+    transactionType = models.CharField(null=True, max_length=20)
+    amount = models.FloatField(null=True)
+    total = models.FloatField(null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = "funds"

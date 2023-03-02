@@ -6,3 +6,4 @@ from core import models
 
 admin.site.register(models.User)
 admin.site.register(models.Portfolio)
+admin.site.register(models.Funds)

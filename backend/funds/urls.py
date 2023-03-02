@@ -1,5 +1,5 @@
 """
-URL mappings for the portfolio app
+URL mappings for the funds app
 """
 from django.urls import (
     path,
@@ -8,13 +8,13 @@ from django.urls import (
 
 from rest_framework.routers import DefaultRouter
 
-from portfolio import views
+from funds import views
 
 
 router = DefaultRouter()
-router.register('portfolio', views.PortfolioViewSet)
+router.register('funds', views.FundsViewSet)
 
-app_name = 'portfolio'
+app_name = 'funds'
 
 urlpatterns = [
     path('', include(router.urls)),
